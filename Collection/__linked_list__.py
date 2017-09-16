@@ -29,10 +29,10 @@ class __linked_list__:
                  has_next = True, has_previous = False):
         self.has_next = has_next
         self.has_previous = has_previous
+        self.first_smart_node = self.__node__(self)
+        self.last_smart_node = self.__node__(self)
         if (self.has_next and self.has_previous):
             #double linked
-            self.first_smart_node = self.__node__(self)
-            self.last_smart_node = self.__node__(self)
             pre_node = self.first_smart_node
             last_node = self.last_smart_node
             pre_node.set_post(last_node)
@@ -46,7 +46,6 @@ class __linked_list__:
                 pre_node = n
         elif (self.has_next):
             #backward linked
-            self.first_smart_node = self.__node__(self)
             pre_node = self.first_smart_node
             for element in data:
                 n = self.__node__(self, element)
@@ -54,7 +53,6 @@ class __linked_list__:
                 pre_node = n
         elif (self.has_previous):
             #forward linked
-            self.last_smart_node = self.__node__(self)
             last_node = self.last_smart_node
             for element in data:
                 n = self.__node__(self, element)
