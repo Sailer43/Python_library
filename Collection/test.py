@@ -2,9 +2,9 @@ __main__ = "test"
 
 """test script"""
 
-import __linked_list__
+import queue as test
 
 a = [1, 2, 3, 4]
-b = __linked_list__.__linked_list__(a, has_next = False, has_previous = True)
+b = test.Queue(a)
 for element in b:
     print(element)

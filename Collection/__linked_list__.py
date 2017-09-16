@@ -82,3 +82,25 @@ class __linked_list__:
             else:
                 self.it_pointer = self.it_pointer.pre_node
         return self.it_pointer.data
+
+    def add_at_start(self, data):
+        if (self.has_next and self.has_previous):
+            #double linked
+            n = self.__node__(self, data)
+            n.set_pre(self.first_smart_node)
+            n.set_post(self.first_smart_node.post_node)
+            self.first_smart_node.post_node.set_pre(n)
+            self.first_smart_node.set_post(n)
+        elif (self.has_next):
+            #backward linked
+            n = self.__node__(self, data)
+            n.set_pre(self.first_smart_node)
+            self.first_smart_node.set_post(n)
+        elif (self.has_previous):
+            #forward linked
+            n = self.__node__(self, data)
+            n.set_post(self.last_smart_node)
+            self.last_smart_node.set_pre(n)
+        else:
+            assert False, """A linked list must be linked, check constructor
+                             making either has_next or has_previous is true"""
