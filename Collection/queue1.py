@@ -1,4 +1,4 @@
-__main__ = "Queue on linked list"
+__name__ = "Queue on linked list"
 
 """TO_DO"""
 

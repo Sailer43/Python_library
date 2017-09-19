@@ -1,4 +1,4 @@
-__main__ = "Linked List"
+__name__ = "Linked List"
 
 """TO_DO"""
 

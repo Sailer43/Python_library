@@ -1,4 +1,4 @@
-__main__ = "Queue"
+__name__ = "Queue"
 
 """TO_DO"""
 

@@ -1,10 +1,10 @@
-__main__ = "test"
+__name__ = "test"
 
 """test script"""
 
-import queue as test
+import __linked_list__ as test
 
 a = [1, 2, 3, 4]
-b = test.Queue(a)
+b = test.__linked_list__(a)
 for element in b:
     print(element)
