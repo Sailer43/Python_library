@@ -17,6 +17,8 @@ def check_vulns(banner, file_name):
         for line in f.readlines():
             if line.strip('\n') in str(banner):
                 print("\t[+] Server is vulnerable: " + str(banner).strip('\n'))
+                return
+    print("\t[-] Server is not vulnerable: " + str(banner).strip('\n'))
 
 def get_a_readable_vuln_list():
     if len(sys.argv) < 2:
@@ -45,7 +47,7 @@ def main():
         for port in port_list:
             banner = ret_banner(IP, port)
             if banner:
-                print('[+] ' + IP + ': ' + str(banner))
+                print('[+] ' + IP + ': ' + str(banner) + " on Port " + str(port))
                 check_vulns(banner, filename)
 
 if __name__ == "__main__":
